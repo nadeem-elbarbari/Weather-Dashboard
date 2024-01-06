@@ -5,7 +5,13 @@ const locationBtn = document.querySelector('.location-btn');
 const cityInput = document.querySelector('#cityInput');
 const weatherCards = document.querySelector('.weather-cards');
 
-let cityName = 'Alexandria';
+const logo = document.querySelector('.logo');
+
+logo.addEventListener('click', () => {
+  location.reload();
+})
+
+let cityName = 'Riyadh';
 async function getCity(city) {
   city = cityInput.value.trim();
   !city ? (city = cityName) : city;
@@ -16,6 +22,9 @@ async function getCity(city) {
   const data = await url.json();
   currentDay(data);
 }
+
+
+
 
 async function userLocationFetch(xcity) {
   const apiKey = '74a436b08cfd4cb48e355742240301';
@@ -167,28 +176,37 @@ locationBtn.addEventListener('click', () => {
     alert('Geolocation is not supported by this browser.');
   }
 });
+// get city while typing
+cityInput.addEventListener('input', () => {
+  if (cityInput.value) {
+    weatherCards.innerHTML = '';
+    getCity();
+    getWeatherForcast();
+  } 
+})
 
 // when document load
 getCity();
 getWeatherForcast();
 
 // dark mode
+
 function darkMode() {
   const element = document.body;
   element.classList.toggle('dark-mode');
 
-  var theme;
+  let theme;
 
   if (element.classList.contains('dark-mode')) {
     document.getElementById(
       'darkmodeBtn'
-    ).innerHTML = `<box-icon name="moon" type="regular" color="white" size="md"></box-icon>`;
+    ).innerHTML = `<box-icon name="sun" type="regular" color="white" size="md"></box-icon>`;
     document.querySelector('.nav-bar').classList.toggle('dark-color-bg');
     theme = 'DARK';
   } else {
     document.getElementById(
       'darkmodeBtn'
-    ).innerHTML = `<box-icon name="sun" type="regular" color="white" size="md"></box-icon>`;
+    ).innerHTML = `<box-icon name="moon" type="regular" color="white" size="md"></box-icon>`;
     document.querySelector('.nav-bar').classList.toggle('dark-color-bg');
     theme = 'LIGHT';
   }
