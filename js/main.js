@@ -165,10 +165,11 @@ cityInput.addEventListener('keyup', e => {
   if (e.key === 'Enter' && cityInput.value) {
     weatherCards.innerHTML = '';
     getCity();
-    getWeatherForcast();
+
   } else if (e.key === 'Enter' && !cityInput.value) {
     alert('Please enter a city');
   }
+  
 });
 
 locationBtn.addEventListener('click', () => {
@@ -178,12 +179,6 @@ locationBtn.addEventListener('click', () => {
     alert('Geolocation is not supported by this browser.');
   }
 });
-// get city while typing
-cityInput.addEventListener('keyup', () => {
-  if (cityInput.value) {
-    getCity();
-  }
-})
 
 // when document load
 getCity();
