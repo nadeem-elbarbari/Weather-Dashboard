@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/boxicons.min.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/media.css" />
+    <link rel="stylesheet" href="./css/darkmode.css">
+    <script src="./js/main.js" defer></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="nav-bar">
+      <div class="logo">
+        <img src="logo.png" alt="logo">
+        <h1>Weather Dashboard</h1>
+      </div>
+      <button id="darkmodeBtn">
+        <box-icon type="regular" name="sun" size="md" color="white"></box-icon>
+      </button>
+    </div>
+    <div class="container">
+      <div class="weather-input">
+        <h3>Enter a city:</h3>
+        <input
+          type="text"
+          id="cityInput"
+          placeholder="E.g. Cairo, Alexandria, Giza"
+        />
+        <button class="search-btn">Search</button>
+        <div class="separator"></div>
+        <button class="location-btn">Use Current Location</button>
+      </div>
+      <div class="weather-data">
+        <div class="current-weather">
+          <div class="details">
+            <h2 id="cityName"></h2>
+            <h4 id="temprature"></h4>
+            <h4 id="humidity"></h4>
+            <h4 id="windSpeed"></h4>
+          </div>
+          <div class="icon">
+            <img id="currentWeatherIcon" alt="icon" />
+            <h4 id="condition"></h4>
+          </div>
+        </div>
+        <div class="days-forecast">
+          <h2>5-Days Forecast</h2>
+          <ul class="weather-cards"></ul>
+        </div>
+      </div>
+    </div>
+    <script src="./js/boxicons.js"></script>
+    <!-- <script src="./js/main.js" defer></script> -->
+  </body>
+</html>
