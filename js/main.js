@@ -21,6 +21,8 @@ async function getCity(city) {
   );
   const data = await url.json();
   currentDay(data);
+  weatherCards.innerHTML = '';
+  getWeatherForcast(city);  
 }
 
 
@@ -177,17 +179,15 @@ locationBtn.addEventListener('click', () => {
   }
 });
 // get city while typing
-cityInput.addEventListener('input', () => {
+cityInput.addEventListener('keyup', () => {
   if (cityInput.value) {
-    weatherCards.innerHTML = '';
     getCity();
-    getWeatherForcast();
-  } 
+  }
 })
 
 // when document load
 getCity();
-getWeatherForcast();
+
 
 // dark mode
 
