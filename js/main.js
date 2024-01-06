@@ -5,7 +5,7 @@ const locationBtn = document.querySelector('.location-btn');
 const cityInput = document.querySelector('#cityInput');
 const weatherCards = document.querySelector('.weather-cards');
 
-let cityName = 'Moscow';
+let cityName = 'Alexandria';
 async function getCity(city) {
   city = cityInput.value.trim();
   !city ? (city = cityName) : city;
