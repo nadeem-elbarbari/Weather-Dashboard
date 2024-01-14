@@ -155,7 +155,7 @@ searchBtn.addEventListener('click', () => {
   if (cityInput.value) {
     weatherCards.innerHTML = '';
     getCity();
-    getWeatherForcast();
+    
   } else {
     alert('Please enter a city');
   }
